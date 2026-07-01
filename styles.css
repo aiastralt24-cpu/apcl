@@ -61,21 +61,32 @@ main {
 }
 
 .site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
   display: grid;
   grid-template-columns: auto 1fr auto;
   gap: 24px;
   align-items: center;
   min-height: 74px;
+  margin-inline: calc((100vw - min(100vw - 48px, var(--max))) / -2);
+  padding: 10px calc((100vw - min(100vw - 48px, var(--max))) / 2);
+  background:
+    linear-gradient(90deg, rgba(5, 10, 20, 0.92), rgba(8, 18, 33, 0.82)),
+    radial-gradient(circle at 78% 40%, rgba(255, 116, 23, 0.12), transparent 18rem);
+  border-bottom: 1px solid rgba(180, 199, 231, 0.08);
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.22);
+  backdrop-filter: blur(18px);
 }
 
 .brand {
   display: grid;
   place-items: center;
-  width: 218px;
-  padding: 11px 20px;
+  width: 196px;
+  padding: 10px 19px;
   background: #fff;
   border-radius: 0 0 8px 8px;
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.26);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.24);
 }
 
 .brand img {
@@ -255,6 +266,7 @@ h1::first-line {
 }
 
 .league-badge span {
+  color: #fff;
   font-size: clamp(3.1rem, 4.2vw, 4.35rem);
   line-height: 0.9;
   text-shadow: 5px 7px 0 rgba(0,0,0,0.45);
@@ -529,10 +541,10 @@ h1::first-line {
   width: 34px;
   height: 26px;
   background:
-    radial-gradient(circle at 50% 20%, #fff 0 7px, transparent 8px),
-    radial-gradient(circle at 20% 35%, #fff 0 5px, transparent 6px),
-    radial-gradient(circle at 80% 35%, #fff 0 5px, transparent 6px),
-    radial-gradient(ellipse at 50% 100%, #fff 0 17px, transparent 18px);
+    radial-gradient(circle at 50% 20%, currentColor 0 7px, transparent 8px),
+    radial-gradient(circle at 20% 35%, currentColor 0 5px, transparent 6px),
+    radial-gradient(circle at 80% 35%, currentColor 0 5px, transparent 6px),
+    radial-gradient(ellipse at 50% 100%, currentColor 0 17px, transparent 18px);
 }
 
 .gift::before {
@@ -1053,4 +1065,182 @@ footer {
     white-space: normal;
     overflow-wrap: anywhere;
   }
+}
+
+/* Off-white campaign theme */
+:root {
+  --bg: #f5f0e8;
+  --bg-soft: #fffaf2;
+  --panel: #fffdf8;
+  --panel-strong: #f8f2e9;
+  --line: rgba(16, 35, 62, 0.12);
+  --line-hot: rgba(255, 116, 23, 0.38);
+  --text: #111827;
+  --muted: #607089;
+}
+
+body {
+  color: var(--text);
+  background:
+    radial-gradient(circle at 82% 10%, rgba(255, 116, 23, 0.18), transparent 24rem),
+    radial-gradient(circle at 8% 35%, rgba(0, 112, 201, 0.1), transparent 28rem),
+    linear-gradient(135deg, #fffaf2 0%, #f5f0e8 48%, #fff7ec 100%);
+}
+
+body::before {
+  background:
+    linear-gradient(90deg, rgba(10, 24, 48, 0.045) 1px, transparent 1px),
+    linear-gradient(rgba(10, 24, 48, 0.04) 1px, transparent 1px);
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,0.55), transparent 72%);
+}
+
+.site-header {
+  background:
+    linear-gradient(90deg, rgba(255, 250, 242, 0.94), rgba(255, 247, 236, 0.9)),
+    radial-gradient(circle at 78% 40%, rgba(255, 116, 23, 0.12), transparent 18rem);
+  border-bottom: 1px solid rgba(16, 35, 62, 0.1);
+  box-shadow: 0 18px 42px rgba(34, 28, 20, 0.12);
+}
+
+.brand {
+  box-shadow: 0 14px 30px rgba(34, 28, 20, 0.14);
+}
+
+nav {
+  border-color: rgba(16, 35, 62, 0.13);
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.8);
+}
+
+nav a,
+.header-action {
+  color: #273247;
+}
+
+nav a:hover {
+  color: #071122;
+  background: rgba(255, 116, 23, 0.09);
+}
+
+h1::first-line {
+  color: #071122;
+}
+
+.hero-copy h1 {
+  color: var(--orange);
+  text-shadow: 0 12px 28px rgba(255, 116, 23, 0.14);
+}
+
+.hero-text {
+  color: #334155;
+}
+
+.secondary-action {
+  color: #18233a;
+  background: rgba(255,255,255,0.54);
+}
+
+.league-card {
+  border-color: rgba(16, 35, 62, 0.14);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.2), 0 30px 70px rgba(42, 32, 20, 0.14);
+}
+
+.quick-prize {
+  border-color: rgba(255,255,255,0.16);
+}
+
+.social-strip {
+  background: rgba(255, 253, 248, 0.82);
+  box-shadow: 0 18px 34px rgba(34, 28, 20, 0.08);
+}
+
+.social-copy,
+.social-result {
+  color: #142033;
+}
+
+.social-strip .instagram {
+  border-color: #142033;
+}
+
+.social-strip .instagram::before {
+  border-color: #142033;
+}
+
+.social-strip .instagram::after {
+  background: #142033;
+}
+
+.section-heading h2,
+.benefits h2,
+.detail-panel h2,
+.whatsapp-card h2 {
+  color: #111827;
+}
+
+.reward-card,
+.detail-panel,
+.benefits {
+  background:
+    radial-gradient(circle at 88% 8%, rgba(255,116,23,0.08), transparent 9rem),
+    var(--panel);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.9), 0 18px 34px rgba(34, 28, 20, 0.08);
+}
+
+.reward-card p,
+.detail-panel small,
+.whatsapp-card p {
+  color: #5d6c82;
+}
+
+.reward-card small,
+.quick-prize p {
+  color: #18233a;
+}
+
+.league-card .quick-prize p {
+  color: #fff;
+}
+
+.league-card .quick-prize span {
+  color: #b7c0d4;
+}
+
+.feature-card {
+  background:
+    radial-gradient(circle at 88% 20%, rgba(255,255,255,0.24), transparent 11rem),
+    linear-gradient(135deg, #f86617, #ff9d2f);
+}
+
+.feature-card p,
+.feature-card strong,
+.feature-card small {
+  color: #fff;
+}
+
+.steps article {
+  border-color: rgba(16, 35, 62, 0.11);
+  box-shadow: 0 16px 28px rgba(34, 28, 20, 0.07);
+}
+
+.details,
+.reward-grid,
+.steps {
+  color: #111827;
+}
+
+.benefit-list span {
+  color: #18233a;
+  border-color: rgba(16, 35, 62, 0.12);
+  background: rgba(255, 255, 255, 0.62);
+}
+
+.judgement li {
+  color: #8a3a13;
+  background: rgba(255, 116, 23, 0.13);
+  border-color: rgba(255, 116, 23, 0.28);
+}
+
+footer {
+  color: rgba(17, 24, 39, 0.58);
 }
