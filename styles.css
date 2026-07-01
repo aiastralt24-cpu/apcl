@@ -1244,3 +1244,414 @@ h1::first-line {
 footer {
   color: rgba(17, 24, 39, 0.58);
 }
+
+/* Inspired by the supplied APCL landing reference */
+:root {
+  --cream: #fbf4e9;
+  --paper: #fffdf9;
+  --surface: #f4e8d6;
+  --ink: #0b1220;
+  --ink-soft: #1b2437;
+  --shadow-card: 0 18px 50px -22px rgba(11, 18, 32, 0.22);
+  --shadow-soft: 0 8px 24px -14px rgba(11, 18, 32, 0.16);
+  --shadow-glow: 0 0 90px -12px rgba(255, 116, 23, 0.55);
+  --body: "General Sans", Inter, Arial, Helvetica, sans-serif;
+  --display: "Clash Display", Arial Black, Arial, Helvetica, sans-serif;
+}
+
+body {
+  background: var(--cream);
+}
+
+body::before {
+  opacity: 0.5;
+  mix-blend-mode: multiply;
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.045'/%3E%3C/svg%3E"),
+    linear-gradient(90deg, rgba(11,18,32,0.035) 1px, transparent 1px),
+    linear-gradient(rgba(11,18,32,0.03) 1px, transparent 1px);
+  background-size: 120px 120px, 80px 80px, 80px 80px;
+}
+
+.site-header {
+  min-height: 72px;
+  background: rgba(251, 244, 233, 0.78);
+  border-bottom: 1px solid rgba(42, 53, 80, 0.08);
+  box-shadow: none;
+  backdrop-filter: blur(16px);
+}
+
+.brand {
+  width: 168px;
+  padding: 9px 17px;
+  border-radius: 0 0 12px 12px;
+  box-shadow: var(--shadow-soft);
+}
+
+nav {
+  padding: 6px;
+  border-color: rgba(42, 53, 80, 0.08);
+  background: var(--paper);
+  box-shadow: var(--shadow-soft);
+}
+
+nav a,
+.header-action {
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.header-action {
+  color: #fff;
+  box-shadow: 0 8px 20px -8px rgba(244, 121, 31, 0.7);
+}
+
+.hero {
+  position: relative;
+  isolation: isolate;
+  margin-inline: calc((100vw - min(100vw - 48px, var(--max))) / -2);
+  padding: 72px calc((100vw - min(100vw - 48px, var(--max))) / 2) 86px;
+  min-height: 650px;
+  color: #fff;
+  background: var(--ink);
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  z-index: -2;
+  width: 820px;
+  height: 820px;
+  right: -180px;
+  top: -250px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 116, 23, 0.55), rgba(255, 116, 23, 0) 62%);
+  filter: blur(10px);
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.8;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.06'/%3E%3C/svg%3E");
+}
+
+.audience {
+  color: #ffb169;
+  margin-bottom: 22px;
+}
+
+h1 {
+  max-width: 680px;
+  font-size: clamp(3.4rem, 7vw, 5.65rem);
+  line-height: 0.94;
+  letter-spacing: -0.01em;
+}
+
+h1::first-line {
+  color: #fff;
+}
+
+.hero-copy h1 {
+  color: var(--orange);
+  text-shadow: none;
+}
+
+.hero-text {
+  max-width: 485px;
+  color: #c7cedc;
+  font-size: 1.06rem;
+  line-height: 1.55;
+}
+
+.primary-action,
+.secondary-action {
+  min-height: 52px;
+  border-radius: 999px;
+  padding-inline: 26px;
+}
+
+.primary-action {
+  color: #fff;
+  box-shadow: var(--shadow-glow);
+}
+
+.secondary-action {
+  color: #fff;
+  border-color: rgba(255,255,255,0.24);
+  background: transparent;
+}
+
+.league-card {
+  min-height: 510px;
+  padding: 32px;
+  border-radius: 22px;
+  border-color: rgba(255,255,255,0.1);
+  background:
+    radial-gradient(circle at 30% 20%, rgba(255, 116, 23, 0.18), transparent 18rem),
+    linear-gradient(160deg, #20293d, #0d1424 62%, #0b1220);
+  box-shadow: 0 40px 80px -30px rgba(0, 0, 0, 0.7), 0 0 0 2px rgba(255,255,255,0.04);
+  transform: rotate(-2deg);
+}
+
+.league-card > * {
+  transform: rotate(2deg);
+}
+
+.league-badge {
+  background: #08162d;
+  border-color: rgba(255,255,255,0.16);
+}
+
+.league-badge span {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", Arial, sans-serif;
+  font-size: clamp(3.2rem, 4.4vw, 4.6rem);
+}
+
+.league-badge strong {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", Arial, sans-serif;
+}
+
+.quick-prize {
+  border-color: rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.06);
+}
+
+.social-strip {
+  margin-top: -34px;
+  margin-bottom: 74px;
+  position: relative;
+  z-index: 3;
+  border-color: rgba(255, 116, 23, 0.24);
+  border-radius: 14px;
+  background: rgba(255,255,255,0.92);
+  box-shadow: var(--shadow-card);
+}
+
+.rewards,
+.how,
+.details,
+.benefits,
+.whatsapp-card {
+  position: relative;
+  z-index: 2;
+}
+
+.section-heading {
+  margin-bottom: 42px;
+}
+
+.section-heading h2,
+.benefits h2,
+.detail-panel h2,
+.whatsapp-card h2 {
+  color: var(--ink);
+  font-size: clamp(2.1rem, 4.2vw, 3.1rem);
+  letter-spacing: -0.01em;
+}
+
+.reward-grid {
+  gap: 20px;
+}
+
+.reward-card,
+.detail-panel,
+.benefits {
+  border-color: rgba(42, 53, 80, 0.08);
+  border-radius: 22px;
+  background: var(--paper);
+  box-shadow: var(--shadow-soft);
+}
+
+.reward-card {
+  min-height: 230px;
+  padding: 30px;
+}
+
+.reward-card strong {
+  font-size: clamp(2.9rem, 4vw, 4.3rem);
+}
+
+.card-icon,
+.detail-icon,
+.step-symbol {
+  border-radius: 14px;
+  background: var(--surface);
+}
+
+.feature-card {
+  border: 0;
+  background:
+    radial-gradient(circle at 84% 12%, rgba(255,255,255,0.16), transparent 12rem),
+    linear-gradient(150deg, var(--orange) 0%, #c2410c 100%);
+  overflow: hidden;
+}
+
+.feature-card::after {
+  content: "";
+  position: absolute;
+  right: -60px;
+  top: -60px;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.15);
+}
+
+.phone-stack {
+  z-index: 2;
+}
+
+.how {
+  padding-top: 88px;
+}
+
+.steps {
+  gap: 16px;
+}
+
+.steps::before {
+  top: 26px;
+  left: 8%;
+  right: 8%;
+  border-top-color: rgba(255, 116, 23, 0.42);
+}
+
+.steps article {
+  min-height: 234px;
+  border-radius: 14px;
+  border-color: rgba(42, 53, 80, 0.08);
+  background: var(--paper);
+  box-shadow: var(--shadow-soft);
+}
+
+.steps article::before {
+  border-top-color: rgba(255, 116, 23, 0.45);
+}
+
+.detail-panel {
+  padding: 40px;
+}
+
+.detail-panel small,
+.reward-card p,
+.reward-card small,
+.steps p {
+  color: var(--ink-soft);
+}
+
+.judgement li {
+  border: 0;
+  color: #c2410c;
+  background: var(--surface);
+  font-weight: 700;
+}
+
+.benefits {
+  padding: 52px;
+}
+
+.benefit-list span {
+  border: 0;
+  border-radius: 14px;
+  background: var(--surface);
+  font-weight: 700;
+}
+
+.whatsapp-card {
+  margin-top: 28px;
+  padding: 44px;
+  border-radius: 22px;
+  background: linear-gradient(135deg, var(--orange), #c2410c);
+  overflow: hidden;
+}
+
+.whatsapp-card::before {
+  content: "";
+  position: absolute;
+  left: -40px;
+  bottom: -60px;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.12);
+}
+
+.whatsapp-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.whatsapp-card h2,
+.whatsapp-card p {
+  color: #fff;
+}
+
+.whatsapp-card strong {
+  color: #fff;
+}
+
+@media (max-width: 980px) {
+  .hero {
+    grid-template-columns: 1fr;
+    padding-top: 52px;
+  }
+
+  .league-card {
+    transform: none;
+  }
+
+  .league-card > * {
+    transform: none;
+  }
+
+  .social-strip {
+    margin-top: -22px;
+  }
+}
+
+@media (max-width: 620px) {
+  .site-header {
+    margin-inline: calc((100vw - min(100vw - 20px, var(--max))) / -2);
+    padding-inline: calc((100vw - min(100vw - 20px, var(--max))) / 2);
+  }
+
+  .brand {
+    width: 170px;
+  }
+
+  .hero {
+    margin-inline: calc((100vw - min(100vw - 20px, var(--max))) / -2);
+    padding: 40px calc((100vw - min(100vw - 20px, var(--max))) / 2) 62px;
+  }
+
+  h1 {
+    font-size: clamp(3.2rem, 16vw, 4.7rem);
+  }
+
+  .league-card {
+    min-height: 0;
+    padding: 18px;
+    border-radius: 18px;
+  }
+
+  .social-strip {
+    margin-bottom: 56px;
+  }
+
+  .reward-card,
+  .detail-panel,
+  .benefits,
+  .whatsapp-card {
+    border-radius: 18px;
+  }
+
+  .benefits,
+  .whatsapp-card {
+    padding: 30px;
+  }
+}
