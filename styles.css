@@ -20,8 +20,8 @@
   --shadow-card: 0 18px 50px -20px rgba(11, 18, 32, 0.22);
   --shadow-soft: 0 8px 24px -12px rgba(11, 18, 32, 0.15);
   --shadow-glow: 0 0 90px -12px rgba(244, 121, 31, 0.55);
-  --font-display: Arial Black, Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  --font-body: Arial, Helvetica, sans-serif;
+  --font-display: "Montserrat", Arial Black, Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  --font-body: "Montserrat", Arial, Helvetica, sans-serif;
 }
 
 * {
@@ -345,7 +345,8 @@ h1::first-line {
 
 .league-badge span,
 .league-badge strong {
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", Arial, sans-serif;
+  font-family: var(--font-display);
+  font-weight: 900;
   line-height: 0.9;
   text-transform: uppercase;
 }
@@ -532,7 +533,8 @@ h1::first-line {
   border-radius: 50%;
   color: var(--white);
   background: #1877f2;
-  font-family: Arial Black, var(--font-body);
+  font-family: var(--font-display);
+  font-weight: 900;
   font-size: 1.85rem;
   line-height: 1;
 }
