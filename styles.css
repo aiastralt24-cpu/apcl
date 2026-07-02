@@ -20,8 +20,8 @@
   --shadow-card: 0 18px 50px -20px rgba(11, 18, 32, 0.22);
   --shadow-soft: 0 8px 24px -12px rgba(11, 18, 32, 0.15);
   --shadow-glow: 0 0 90px -12px rgba(244, 121, 31, 0.55);
-  --font-display: "Montserrat", Arial Black, Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  --font-body: "Montserrat", Arial, Helvetica, sans-serif;
+  --font-display: "Rubik", Arial Black, Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  --font-body: "Rubik", Arial, Helvetica, sans-serif;
 }
 
 * {
