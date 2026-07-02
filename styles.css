@@ -131,17 +131,20 @@ main {
 .brand {
   display: grid;
   place-items: center;
-  width: 168px;
-  padding: 9px 17px;
+  width: 186px;
+  height: 72px;
+  padding: 0;
   border-radius: 0 0 12px 12px;
-  background: var(--paper);
-  box-shadow: var(--shadow-soft);
+  background: rgba(251, 244, 233, 0.78);
+  box-shadow: none;
+  overflow: hidden;
 }
 
 .brand img {
   display: block;
-  width: 100%;
+  width: 168px;
   height: auto;
+  transform: scale(1.12);
 }
 
 nav {
@@ -984,6 +987,18 @@ footer {
   text-align: right;
   color: rgba(11, 18, 32, 0.62);
   font-size: 0.82rem;
+}
+
+footer a {
+  color: inherit;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.2s ease;
+}
+
+footer a:hover {
+  color: var(--amber-deep);
 }
 
 /* Responsive */
