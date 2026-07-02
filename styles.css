@@ -867,6 +867,42 @@ h1::first-line {
   font-weight: 800;
 }
 
+.submission-note {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: minmax(170px, auto) minmax(220px, auto) 1fr;
+  gap: 18px;
+  align-items: center;
+  padding: 24px 28px;
+  border: 1px solid rgba(244, 121, 31, 0.22);
+  border-radius: var(--radius-sm);
+  background:
+    linear-gradient(135deg, rgba(244, 121, 31, 0.11), rgba(255, 253, 249, 0.86)),
+    var(--paper);
+  box-shadow: var(--shadow-soft);
+}
+
+.submission-note p {
+  margin: 0;
+  color: var(--amber-deep);
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.submission-note strong {
+  color: var(--ink);
+  font-size: 1.12rem;
+  font-weight: 900;
+}
+
+.submission-note span {
+  color: var(--ink-soft);
+  font-size: 0.94rem;
+  font-weight: 700;
+}
+
 .benefits {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1038,6 +1074,11 @@ footer a:hover {
   .benefits,
   .whatsapp-card {
     grid-template-columns: 1fr;
+  }
+
+  .submission-note {
+    grid-template-columns: 1fr;
+    align-items: start;
   }
 
   .feature-card {
