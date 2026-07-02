@@ -614,7 +614,7 @@ h1 .grow {
   display: block;
   margin-top: 10px;
   color: var(--ink-soft);
-  font-weight: 800;
+  font-weight: 500;
 }
 
 .card-icon,
@@ -875,7 +875,8 @@ h1 .grow {
   margin-top: 16px;
   color: var(--ink-soft);
   font-size: 0.95rem;
-  font-weight: 800;
+  font-weight: 500;
+  line-height: 1.55;
 }
 
 .judgement ul {
@@ -893,7 +894,7 @@ h1 .grow {
   color: var(--amber-deep);
   background: var(--surface);
   font-size: 0.85rem;
-  font-weight: 800;
+  font-weight: 600;
 }
 
 .submission-note {
