@@ -89,11 +89,12 @@ main {
 }
 
 .section-heading {
-  max-width: 660px;
+  max-width: 860px;
   margin-bottom: 44px;
 }
 
 .section-heading.centered {
+  max-width: 660px;
   margin-inline: auto;
   text-align: center;
 }
